@@ -1,0 +1,68 @@
+.container {
+  position: relative;
+  padding: 0;
+  width: 320px;
+  height: 100%;
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-bottom: none;
+  border-radius: 20px 20px 0 0;
+  background: rgba(33, 33, 40, .8);
+}
+
+.bottomBar {
+  box-sizing: border-box;
+  height: 60px;
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-top: none;
+  border-radius: 0 0 20px 20px;
+  background: rgba(33, 33, 40, .8);
+
+}
+
+.button {
+  margin-right: 6px;
+  width: 10px;
+  height: 10px;
+  border: 1px solid #DB9D2B;
+  border-radius: 50%;
+  background-color: #FDBD3C;
+
+  &:first-child {
+    border: 1px solid #DE3E3E;
+    background: #FD5B58;
+  }
+
+  &:last-child {
+    border: 1px solid #10AC36;
+    background: #24CC4C;
+  }
+}
+
+.scrollWrapper {
+  overflow-y: scroll;
+  box-sizing: border-box;
+  height: calc(100% - 100px);
+  border-right: 1px solid rgba(255, 255, 255, .1);
+  border-bottom: none;
+  border-left: 1px solid rgba(255, 255, 255, .1);
+  background: rgba(33, 33, 40, .8);
+  padding: 0 10px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.image {
+  display: block;
+  margin: 0;
+  width: 100%;
+}

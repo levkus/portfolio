@@ -1,0 +1,16 @@
+.container {
+  line-height: 38px;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  margin-left: .5rem;
+
+  &:hover > svg > .icon {
+    fill: #fff;
+  }
+}
+
+.icon {
+  fill: #c2deff;
+  transition: fill .2s;
+}

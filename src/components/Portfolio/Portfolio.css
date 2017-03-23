@@ -1,0 +1,20 @@
+.portfolio {
+  h1 {
+    margin-bottom: 2rem;
+  }
+}
+
+.container {
+
+  &:last-child > .line {
+    display: none;
+  }
+}
+
+.line {
+  margin: 1.5rem auto 2rem;
+  width: 30%;
+  height: 1px;
+  border: none;
+  background-image: linear-gradient(90deg, transparent, rgba(194, 222, 255, .2), transparent);
+}

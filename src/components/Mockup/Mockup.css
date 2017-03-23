@@ -1,0 +1,67 @@
+.container {
+  position: relative;
+  padding: 0;
+  max-width: 800px;
+  height: 100%;
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  padding-left: 6px;
+  height: 24px;
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-bottom: none;
+  border-radius: 5px 5px 0 0;
+  background: rgba(33, 33, 40, .8);
+}
+
+.bottomBar {
+  box-sizing: border-box;
+  height: 3px;
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-top: none;
+  background: rgba(33, 33, 40, .8);
+
+}
+
+.button {
+  margin-right: 6px;
+  width: 10px;
+  height: 10px;
+  border: 1px solid #DB9D2B;
+  border-radius: 50%;
+  background-color: #FDBD3C;
+
+  &:first-child {
+    border: 1px solid #DE3E3E;
+    background: #FD5B58;
+  }
+
+  &:last-child {
+    border: 1px solid #10AC36;
+    background: #24CC4C;
+  }
+}
+
+.scrollWrapper {
+  overflow-y: scroll;
+  box-sizing: border-box;
+  padding: 0 3px;
+  height: calc(100% - 23px);
+  border-right: 1px solid rgba(255, 255, 255, .1);
+  border-left: 1px solid rgba(255, 255, 255, .1);
+  background: rgba(33, 33, 40, .8);
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.image {
+  display: block;
+  margin: 0;
+  width: 100%;
+}
