@@ -31,7 +31,8 @@ class App extends Component {
 }
 
 App.propTypes = {
-  children: PropTypes.element
+  children: PropTypes.element,
+  modalVisible: PropTypes.bool
 }
 
 const mapStateToProps = state => {
