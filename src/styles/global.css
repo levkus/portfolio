@@ -32,6 +32,7 @@
         .content-wrapper {
           overflow: visible;
           margin: 0;
+          width: 100%;
           padding-right: 0;
           padding-top: 1rem;
         }
@@ -135,9 +136,9 @@
       .content-wrapper {
         position: relative;
         overflow-y: scroll;
-        -webkit-overflow-scrolling: touch;
+        width: calc(100% + 100px);
         box-sizing: border-box;
-        margin-right: -100px;
+        /*margin-right: -100px;*/
         padding: 3.5rem 100px 4rem 0;
         height: 100%;
       }

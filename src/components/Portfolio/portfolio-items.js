@@ -15,7 +15,7 @@ export const noch212 = {
 export const curebar = {
   id: 2,
   title: 'Ваш досуг + Cure Bar',
-  desc: 'Посадочная страница промоакции.',
+  desc: 'Посадочная страница промоакции Ваш Досуг и Cure Bar.',
   techs: ['html5', 'css3', 'responsive', 'vanilla js', 'responsive'],
   thumbnail: require('./pics/small/curebar.png'),
   image: require('./pics/curebar.png'),
