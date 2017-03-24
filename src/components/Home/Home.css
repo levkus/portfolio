@@ -1,12 +1,3 @@
 .home {
 
 }
-
-.link {
-  color: #c2deff;
-  transition: color .2s;
-
-  &:hover {
-    color: #fff;
-  }
-}

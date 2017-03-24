@@ -11,16 +11,6 @@
   }
 }
 
-.link {
-  color: #c2deff;
-  font-size: .9rem;
-  transition: color .2s;
-
-  &:hover {
-    color: #fff;
-  }
-}
-
 .thumbnail {
   position: relative;
   display: block;

@@ -67,6 +67,15 @@
     line-height: 2rem;
   }
 
+  .link {
+    color: #c2deff;
+    transition: color .2s;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
   #app {
     height: 100%;
     /*perspective: 500px;*/

@@ -18,8 +18,8 @@ const Home = () => {
         <li>Lodash</li>
         <li>Apollo</li>
       </ul>
-      <p>Например это портфолио работает на React + Redux ;) (
-        <a className={css.link} target='_blank' href='https://github.com/levkus/portfolio'>Github</a>)
+      <p>222Например это портфолио работает на React + Redux ;) (
+        <a className='link' target='_blank' href='https://github.com/levkus/portfolio'>Github</a>)
       </p>
     </div>
   )

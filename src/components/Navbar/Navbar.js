@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import FontAwesome from 'react-fontawesome'
-import { Link } from 'react-router'
+import { NavLink } from 'react-router-dom'
 import css from './navbar.css'
 
 class Navbar extends Component {
@@ -14,14 +14,14 @@ class Navbar extends Component {
 
   renderLinks = () => (
     this.props.navigationLinks.map(link => (
-      <Link
+      <NavLink
         key={link.id}
         to={link.path}
         className={css.link}
         activeClassName={css.activeLink}
         onClick={this.toggleMenu}>
         {link.text}
-      </Link>
+      </NavLink>
     ))
   )
 

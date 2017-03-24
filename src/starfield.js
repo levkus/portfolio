@@ -47,7 +47,7 @@ export const makeStarfield = (canvas) => {
       star.x -= 1
 
       if (star.x < 0) {
-        star.x = width
+        star.x = width + 2
         star.y = Math.random() * height
       }
     })

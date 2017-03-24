@@ -2,24 +2,20 @@ var webpack = require('webpack')
 var path = require('path')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 
-// Config
+const vendor = ['react', 'react-dom', 'react-router', 'react-router-dom', 'redux', 'react-redux', 'lodash']
+
 module.exports = {
-  devtool: 'cheap-module-source-map',
-  context: path.join(__dirname, 'src'),
-  entry: [
-    path.join(__dirname, 'src', 'index.js')
-  ],
+  entry: {
+    app: path.join(__dirname, 'src', 'index.js'),
+    vendor
+  },
   output: {
-    path: path.join(__dirname, 'dist'),
-    filename: '[name].[chunkhash].js'
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].[hash].js'
   },
   module: {
     rules: [
-      {
-        test: /\.js$/,
-        use: 'babel-loader',
-        include: path.join(__dirname, 'src')
-      },
+      { test: /\.js$/, exclude: /node_modules/, use: ['babel-loader'] },
       {
         test: /\.css$/,
         use: [
@@ -31,78 +27,22 @@ module.exports = {
       },
       {
         test: /\.(jpe?g|png|gif)$/i,
-        use: [
-          'file-loader?hash=sha512&digest=hex&name=[hash].[ext]'
-        ]
+        use: 'file-loader?hash=sha512&digest=hex&name=[hash].[ext]'
       }
     ]
   },
+  devtool: 'inline-source-map',
+  devServer: {
+    port: 3000,
+    historyApiFallback: true
+  },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-      names: ['manifest']
-    }),
+    new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({
-      template: 'index.html'
+      template: 'src/index.html'
     }),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+    new webpack.optimize.CommonsChunkPlugin({
+      names: ['vendor', 'manifest']
     })
   ]
 }
-
-// var path = require('path')
-// var webpack = require('webpack')
-//
-// var postcssPlugins = [
-//   require('postcss-advanced-variables'),
-//   require('postcss-color-function'),
-//   require('precss'),
-//   require('autoprefixer')
-// ]
-//
-// // Config
-// module.exports = {
-//   devtool: 'cheap-module-source-map',
-//   context: path.join(__dirname, 'src'),
-//   entry: [
-//     'react-hot-loader/patch',
-//     'webpack-hot-middleware/client',
-//     path.join(__dirname, 'src', 'index.js')
-//   ],
-//   output: {
-//     path: path.join(__dirname, 'dist'),
-//     filename: 'app.js',
-//     publicPath: '/static/'
-//   },
-//   module: {
-//     loaders: [
-//       {
-//         test: /\.js$/,
-//         loaders: ['babel'],
-//         include: path.join(__dirname, 'src')
-//       },
-//       {
-//         test: /\.css$/,
-//         loaders: [
-//           'style?sourceMap',
-//           'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
-//           'postcss?sourceMap'
-//         ],
-//         exclude: /node-modules/
-//       },
-//       {
-//         test: /\.(jpe?g|png|gif)$/i,
-//         loaders: [
-//           'file?hash=sha512&digest=hex&name=[hash].[ext]'
-//         ]
-//       },
-//       { test: /\.svg$/, loader: 'svg-inline' }
-//     ]
-//   },
-//   plugins: [
-//     new webpack.HotModuleReplacementPlugin()
-//   ],
-//   postcss: function () {
-//     return postcssPlugins
-//   }
-// }

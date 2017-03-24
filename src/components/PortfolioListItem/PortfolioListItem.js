@@ -35,7 +35,7 @@ const PortfolioListItem = ({ item, openCard, setContent }) => {
       </div>
       <div className={css.text}>
         <h2>{title}</h2>
-        {link ? <a href={link} className={css.link} target='_blank'>Ссылка</a> : false}
+        {link ? <a href={link} className='link' target='_blank'>Ссылка</a> : false}
         <p className={css.year}>Год: {year}</p>
         <p>{desc}</p>
         <div className={css.techs}>

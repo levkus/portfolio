@@ -1,11 +1,14 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import Modal from './Modal/Modal'
+import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom'
 import '../styles/global.css'
 
+import Modal from './Modal/Modal'
 import Navbar from './Navbar/Navbar'
+import Home from './Home/Home'
+import Portfolio from './Portfolio/Portfolio'
+import Contacts from './Contacts/Contacts'
 
-// Эти ссылки потом из стейта тянуть будем
 const navigationLinks = [
   { id: 0, path: '/story', text: 'История' },
   { id: 1, path: '/portfolio', text: 'Портфолио' },
@@ -15,17 +18,26 @@ const navigationLinks = [
 class App extends Component {
   render () {
     return (
-      <div className='root-container' id='root'>
-        <Navbar navigationLinks={navigationLinks} />
-        <div className='content'>
-          <div className='content-wrapper'>
-            {this.props.children}
+      <BrowserRouter>
+        <div className='root-container' id='root'>
+          <Navbar navigationLinks={navigationLinks} />
+          <div className='content'>
+            <div className='content-wrapper'>
+              <Switch>
+                <Route exact path='/'>
+                  <Redirect to='/story' />
+                </Route>
+                <Route path='/story' component={Home} />
+                <Route path='/portfolio' component={Portfolio} />
+                <Route path='/contacts' component={Contacts} />
+              </Switch>
+            </div>
+            <div className='fade-top' />
+            <div className='fade-bottom' />
           </div>
-          <div className='fade-top' />
-          <div className='fade-bottom' />
+          {this.props.modalVisible ? <Modal /> : false}
         </div>
-        {this.props.modalVisible ? <Modal /> : false}
-      </div>
+      </BrowserRouter>
     )
   }
 }
