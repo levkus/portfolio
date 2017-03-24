@@ -18,7 +18,7 @@ const Home = () => {
         <li>Lodash</li>
         <li>Apollo</li>
       </ul>
-      <p>222Например это портфолио работает на React + Redux ;) (
+      <p>Например это портфолио работает на React + Redux ;) (
         <a className='link' target='_blank' href='https://github.com/levkus/portfolio'>Github</a>)
       </p>
     </div>
