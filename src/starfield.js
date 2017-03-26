@@ -45,7 +45,7 @@ export const makeStarfield = (canvas) => {
     _.times(limit, i => {
       const star = stars[i]
 
-      star.x -= 1 * star.speed
+      star.x -= 1 * star.r * 0.5
 
       if (star.x < 0) {
         star.x = width + 2
