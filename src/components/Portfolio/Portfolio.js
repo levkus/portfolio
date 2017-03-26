@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PortfolioListItem from '../PortfolioListItem/PortfolioListItem'
 import items from './portfolio-items'
-import css from './Portfolio.css'
+import css from './Portfolio.styl'
 
 class Portfolio extends Component {
   renderItems = () => {

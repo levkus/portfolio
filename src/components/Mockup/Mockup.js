@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import css from './Mockup.css'
+import css from './Mockup.styl'
 
 const Mockup = ({ image }) => (
   <div className={css.container}>

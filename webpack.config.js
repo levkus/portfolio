@@ -1,6 +1,7 @@
 const webpack = require('webpack')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const poststylus = require('poststylus')
 
 const vendor = [
   'react', 'react-dom', 'react-router',
@@ -35,6 +36,14 @@ module.exports = {
         exclude: /node-modules/
       },
       {
+        test: /\.styl$/,
+        use: [
+          'style-loader?sourceMap',
+          'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+          'stylus-loader'
+        ]
+      },
+      {
         test: /\.(jpe?g|png|gif)$/i,
         use: 'file-loader?hash=sha512&digest=hex&name=[hash].[ext]'
       },
@@ -54,6 +63,13 @@ module.exports = {
     new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({
       template: 'src/index.html'
+    }),
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        stylus: {
+          use: [poststylus(['autoprefixer'])]
+        }
+      }
     }),
     new webpack.optimize.CommonsChunkPlugin({
       names: ['vendor', 'manifest']

@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import FontAwesome from 'react-fontawesome'
 import { NavLink } from 'react-router-dom'
-import css from './navbar.css'
+import css from './Navbar.styl'
 
 class Navbar extends Component {
   constructor (props) {
@@ -34,6 +34,7 @@ class Navbar extends Component {
   }
 
   render () {
+    console.log(css)
     const { menuOpen } = this.state
     const navbarClass = menuOpen ? css.navbar + ' ' + css.open : css.navbar
     return (

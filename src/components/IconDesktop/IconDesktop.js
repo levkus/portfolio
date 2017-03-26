@@ -1,5 +1,5 @@
 import React from 'react'
-import css from './IconDesktop.css'
+import css from './IconDesktop.styl'
 
 const IconDesktop = ({ handleClick }) => (
   <div className={css.container} onClick={handleClick}>

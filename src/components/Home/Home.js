@@ -1,6 +1,6 @@
 import React from 'react'
 import moment from 'moment'
-import css from './Home.css'
+import css from './Home.styl'
 
 const Home = () => {
   const age = moment().diff(moment('21-08-1987', 'DD-MM-YYYY'), 'years')

@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 // import FontAwesome from 'react-fontawesome'
 import _ from 'lodash'
 
-import css from './PortfolioListItem.css'
+import css from './PortfolioListItem.styl'
 import { showModal, setModalContent } from '../../store/actions'
 import Mockup from '../Mockup/Mockup'
 import MockupMobile from '../MockupMobile/MockupMobile'

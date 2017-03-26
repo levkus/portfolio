@@ -1,5 +1,5 @@
 import React from 'react'
-import css from './IconMobile.css'
+import css from './IconMobile.styl'
 
 const IconMobile = ({ handleClick }) => (
   <div className={css.container} onClick={handleClick}>

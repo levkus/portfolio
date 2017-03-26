@@ -1,5 +1,5 @@
 import React from 'react'
-import css from './Contacts.css'
+import css from './Contacts.styl'
 import FontAwesome from 'react-fontawesome'
 
 const Contacts = () => {

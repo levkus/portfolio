@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import css from './MockupMobile.css'
+import css from './MockupMobile.styl'
 
 const MockupMobile = ({ image }) => (
   <div className={css.container}>
