@@ -51,7 +51,7 @@ export const mastercard = {
 export const urban = {
   id: 5,
   title: 'Клуб клиентов Urban Group',
-  desc: 'Адаптация лендинга клуба клиентов Urban Group под мобильные устройства.',
+  desc: 'Адаптация лэндинга клуба клиентов Urban Group под мобильные устройства.',
   techs: ['html5', 'css3', 'svg', 'vanilla js', 'jquery', 'responsive'],
   thumbnail: require('./pics/small/club.png'),
   image: require('./pics/club.png'),
