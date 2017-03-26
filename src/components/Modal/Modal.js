@@ -13,7 +13,9 @@ class Modal extends Component {
       this.props.close()
     }
     document.body.appendChild(this.modalTarget)
-    document.body.style.overflow = 'hidden'
+    if (window.innerWidth < 945) {
+      document.body.style.overflow = 'hidden'
+    }
     this._render()
   }
 
@@ -26,7 +28,9 @@ class Modal extends Component {
     setTimeout(() => {
       ReactDOM.unmountComponentAtNode(this.modalTarget)
       document.body.removeChild(this.modalTarget)
-      document.body.style.overflow = 'visible'
+      if (window.innerWidth < 945) {
+        document.body.style.overflow = 'visible'
+      }
     }, 200)
   }
 
