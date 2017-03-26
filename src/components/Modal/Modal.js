@@ -8,10 +8,12 @@ class Modal extends Component {
   componentDidMount = () => {
     this.modalTarget = document.createElement('div')
     this.modalTarget.className = css.modal
+    this.modalTarget.style.opacity = 1
     this.modalTarget.onclick = () => {
-      this.props.closeCard()
+      this.props.close()
     }
     document.body.appendChild(this.modalTarget)
+    document.body.style.overflow = 'hidden'
     this._render()
   }
 
@@ -20,8 +22,12 @@ class Modal extends Component {
   }
 
   componentWillUnmount = () => {
-    ReactDOM.unmountComponentAtNode(this.modalTarget)
-    document.body.removeChild(this.modalTarget)
+    this.modalTarget.style.opacity = 0
+    setTimeout(() => {
+      ReactDOM.unmountComponentAtNode(this.modalTarget)
+      document.body.removeChild(this.modalTarget)
+      document.body.style.overflow = 'visible'
+    }, 200)
   }
 
   _render = () => {
@@ -38,12 +44,17 @@ class Modal extends Component {
   }
 }
 
+Modal.propTypes = {
+  close: PropTypes.func,
+  content: PropTypes.object
+}
+
 const mapStateToProps = state => ({
   content: state.modal.content
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  closeCard () {
+  close () {
     dispatch(hideModal)
   }
 })
