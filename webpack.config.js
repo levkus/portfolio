@@ -9,7 +9,7 @@ const vendor = [
 ]
 
 module.exports = {
-  devtool: 'source-map',
+  devtool: 'cheap-module-source-map',
   entry: {
     'app': [
       'babel-polyfill',
