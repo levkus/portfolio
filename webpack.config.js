@@ -37,6 +37,10 @@ module.exports = {
       {
         test: /\.(jpe?g|png|gif)$/i,
         use: 'file-loader?hash=sha512&digest=hex&name=[hash].[ext]'
+      },
+      {
+        test: /\.(ttf|woff|woff2)$/,
+        use: 'file-loader?name=assets/fonts/[name].[ext]'
       }
     ]
   },
