@@ -22,7 +22,8 @@ export const makeStarfield = (canvas) => {
     stars.push({
       x: Math.random() * width,
       y: Math.random() * height,
-      r: Math.random() * 1.3 + 0.5
+      r: Math.random() * 1.3 + 0.5,
+      speed: _.random(0.8, 1.1)
     })
   })
 
@@ -44,7 +45,7 @@ export const makeStarfield = (canvas) => {
     _.times(limit, i => {
       const star = stars[i]
 
-      star.x -= 1
+      star.x -= 1 * star.speed
 
       if (star.x < 0) {
         star.x = width + 2

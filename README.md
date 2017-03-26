@@ -1,3 +1,1 @@
-# Install and run
-
-    npm i && npm start
+# Starpact Portfolio

@@ -1,21 +1,30 @@
-var webpack = require('webpack')
-var path = require('path')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
+const webpack = require('webpack')
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-const vendor = ['react', 'react-dom', 'react-router', 'react-router-dom', 'redux', 'react-redux', 'lodash']
+const vendor = [
+  'react', 'react-dom', 'react-router',
+  'react-router-dom', 'redux', 'react-redux',
+  'lodash', 'moment', 'react-fontawesome'
+]
 
 module.exports = {
+  devtool: 'source-map',
   entry: {
-    app: path.join(__dirname, 'src', 'index.js'),
+    'app': [
+      'babel-polyfill',
+      'react-hot-loader/patch',
+      path.join(__dirname, 'src', 'index.js')
+    ],
     vendor
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, './dist'),
     filename: '[name].[hash].js'
   },
   module: {
     rules: [
-      { test: /\.js$/, exclude: /node_modules/, use: ['babel-loader'] },
+      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
       {
         test: /\.css$/,
         use: [
@@ -31,12 +40,13 @@ module.exports = {
       }
     ]
   },
-  devtool: 'inline-source-map',
   devServer: {
     port: 3000,
+    hot: true,
     historyApiFallback: true
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({
       template: 'src/index.html'
