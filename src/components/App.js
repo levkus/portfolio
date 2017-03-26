@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom'
+import { HashRouter, Route, Redirect, Switch } from 'react-router-dom'
 import '../styles/global.css'
 
 import Modal from './Modal/Modal'
@@ -18,7 +18,7 @@ const navigationLinks = [
 class App extends Component {
   render () {
     return (
-      <BrowserRouter>
+      <HashRouter>
         <div className='root-container' id='root'>
           <Navbar navigationLinks={navigationLinks} />
           <div className='content'>
@@ -37,7 +37,7 @@ class App extends Component {
           </div>
           {this.props.modalVisible ? <Modal /> : false}
         </div>
-      </BrowserRouter>
+      </HashRouter>
     )
   }
 }
