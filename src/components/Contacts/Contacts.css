@@ -4,5 +4,9 @@
 
   li {
     margin-bottom: .7rem;
+
+    span {
+      margin-right: .5rem;
+    }
   }
 }
