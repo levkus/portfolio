@@ -21,7 +21,7 @@ export const curebar = {
   image: require('./pics/curebar.png'),
   mobile: require('./pics/mobile/curebar_mobile.png'),
   year: 2017,
-  link: 'http://starpact.ru/dosug/curebar/'
+  link: 'http://starpact.ru/projects/dosug/curebar/'
 }
 
 export const overcounters = {
@@ -45,7 +45,7 @@ export const mastercard = {
   image: require('./pics/mastercard_main.png'),
   mobile: require('./pics/mobile/mastercard_main_mobile.png'),
   year: 2016,
-  link: 'http://starpact.ru/dosug/mastercard/'
+  link: 'http://starpact.ru/projects/dosug/mastercard/'
 }
 
 export const urban = {
@@ -57,7 +57,7 @@ export const urban = {
   image: require('./pics/club.png'),
   mobile: require('./pics/mobile/club_mobile.png'),
   year: 2017,
-  link: 'http://starpact.ru/club/'
+  link: 'http://starpact.ru/projects/club/'
 }
 
 export const pivnica = {
