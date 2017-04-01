@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
-// import FontAwesome from 'react-fontawesome'
 import _ from 'lodash'
 
 import css from './PortfolioListItem.styl'
@@ -13,7 +12,6 @@ import IconMobile from '../IconMobile/IconMobile'
 
 const PortfolioListItem = ({ item, openCard, setContent }) => {
   const { title, desc, techs, thumbnail, mobile, year, image, link } = item
-  const desktop = { backgroundImage: `url(${thumbnail})` }
 
   const openDesktopMockup = () => {
     openCard()
@@ -27,7 +25,7 @@ const PortfolioListItem = ({ item, openCard, setContent }) => {
 
   return (
     <div className={css.container}>
-      <div className={css.thumbnail} style={desktop}>
+      <div className={css.thumbnail} style={{ backgroundImage: `url(${thumbnail})` }}>
         <div className={css.overlay}>
           <IconDesktop handleClick={openDesktopMockup} />
           {mobile ? <IconMobile handleClick={openMobileMockup} /> : false}

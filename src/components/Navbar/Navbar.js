@@ -34,7 +34,6 @@ class Navbar extends Component {
   }
 
   render () {
-    console.log(css)
     const { menuOpen } = this.state
     const navbarClass = menuOpen ? css.navbar + ' ' + css.open : css.navbar
     return (

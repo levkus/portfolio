@@ -3,13 +3,13 @@
 }
 
 .closeArea {
-  display: none;
   position: fixed;
   top: 185px;
   right: 0;
   bottom: 0;
   left: 0;
   z-index: 13;
+  display: none;
   background-color: rgba(0, 0, 0, .5);
 
   @media (max-width: 945px) {
@@ -86,15 +86,6 @@
     &:after {
       display: none;
     }
-  }
-  &:after {
-    position: absolute;
-    top: 1px;
-    right: -21px;
-    padding-left: 20px;
-    content: '\f054';
-    font-size: .7rem;
-    font-family: 'FontAwesome';
   }
 }
 
