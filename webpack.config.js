@@ -1,6 +1,8 @@
 const webpack = require('webpack')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const poststylus = require('poststylus')
 
 const vendor = [
@@ -21,7 +23,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: '[name].[hash].js'
+    filename: './js/[name].[hash].js'
   },
   module: {
     rules: [
@@ -37,15 +39,17 @@ module.exports = {
       },
       {
         test: /\.styl$/,
-        use: [
-          'style-loader?sourceMap',
-          'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
-          'stylus-loader'
-        ]
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader?sourceMap',
+          use: [
+            'css-loader?modules&importLoaders=1&localIdentName=[name]-[local]_[hash:base64:5]&url=false',
+            'stylus-loader'
+          ]
+        })
       },
       {
         test: /\.(jpe?g|png|gif)$/i,
-        use: 'file-loader?hash=sha512&digest=hex&name=[hash].[ext]'
+        use: 'file-loader?hash=sha512&digest=hex&name=assets/img/[hash].[ext]'
       },
       {
         test: /\.(ttf|woff|woff2)$/,
@@ -76,6 +80,8 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-    })
+    }),
+    new ExtractTextPlugin('styles.css'),
+    new CopyWebpackPlugin([ { from: 'src/assets', to: 'assets' } ])
   ]
 }
