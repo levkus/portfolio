@@ -21,6 +21,7 @@
   "homepage": "",
   "dependencies": {
     "babel-polyfill": "^6.23.0",
+    "express": "^4.15.2",
     "lodash": "^4.17.4",
     "moment": "^2.18.1",
     "normalizecss": "^3.0.0",
@@ -45,6 +46,7 @@
     "babel-runtime": "^6.18.0",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.27.3",
+    "debug": "^2.6.3",
     "eslint": "^3.18.0",
     "eslint-config-standard": "^7.1.0",
     "eslint-config-standard-react": "^4.3.0",
@@ -65,6 +67,8 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
     "webpack": "^2.2.1",
-    "webpack-dev-server": "^2.4.1"
+    "webpack-dev-middleware": "^1.10.1",
+    "webpack-dev-server": "^2.4.1",
+    "webpack-hot-middleware": "^2.18.0"
   }
 }

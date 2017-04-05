@@ -28,9 +28,6 @@ class App extends Component {
                 <Route exact path='/'>
                   <Redirect to='/story' />
                 </Route>
-                <Route exact path='/p'>
-                  <Redirect to='/story' />
-                </Route>
                 <Route path='/story' component={Home} />
                 <Route path='/portfolio' component={Portfolio} />
                 <Route path='/contacts' component={Contacts} />
